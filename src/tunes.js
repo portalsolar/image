@@ -97,8 +97,15 @@ export default class Tunes {
         title,
       });
 
+      el.setAttribute('id', tune.name);
+
       el.addEventListener('click', () => {
         this.tuneClicked(tune.name, tune.action);
+        const unselect = ['rightImage', 'leftImage', 'centerImage'].filter(value => value !== tune.name);
+
+        unselect.forEach(value => {
+          document.getElementById(value).classList.remove(this.CSS.buttonActive);
+        });
       });
 
       el.dataset.tune = tune.name;
