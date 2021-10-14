@@ -104,7 +104,7 @@ export default class Tunes {
         const unselect = ['rightImage', 'leftImage', 'centerImage'].filter(value => value !== tune.name);
 
         unselect.forEach(value => {
-          document.getElementById(value).classList.remove(this.CSS.buttonActive);
+          document.getElementById(value).classList.remove([this.CSS.buttonActive, `image-tool--${value}`]);
         });
       });
 
