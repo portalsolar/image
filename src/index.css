@@ -153,6 +153,14 @@
     }
   }
 
+  &--startImage {
+    ^&__image {
+      &-picture {
+        width: 100%;
+      }
+    }
+  }
+
   &--stretched {
     ^&__image {
       &-picture {
