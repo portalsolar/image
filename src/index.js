@@ -36,7 +36,9 @@
  * @property {string} caption — image caption
  * @property {boolean} withBorder - should image be rendered with border
  * @property {boolean} withBackground - should image be rendered with background
- * @property {boolean} startImage - should image be rendered with background
+ * @property {boolean} leftImage - should image be rendered align left
+ * @property {boolean} rightImage - should image be rendered align right
+ * @property {boolean} centerImage - should image be rendered align center
  * @property {boolean} stretched - should image be stretched to full width of container
  * @property {object} file — Image file data returned from backend
  * @property {string} file.url — image URL

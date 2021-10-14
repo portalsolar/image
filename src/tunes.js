@@ -2,7 +2,9 @@ import { make } from './ui';
 import bgIcon from './svg/background.svg';
 import borderIcon from './svg/border.svg';
 import stretchedIcon from './svg/stretched.svg';
-import lefIcon from './svg/left.svg';
+import leftImageIcon from './svg/left-image.svg';
+import rightImageIcon from './svg/right-image.svg';
+import centerImageIcon from './svg/center-image.svg';
 
 /**
  * Working with Block Tunes
@@ -44,9 +46,19 @@ export default class Tunes {
         title: 'With background',
       },
       {
-        name: 'startImage',
-        icon: lefIcon,
+        name: 'leftImage',
+        icon: leftImageIcon,
         title: 'Imagem a esquerda',
+      },
+      {
+        name: 'rightImage',
+        icon: rightImageIcon,
+        title: 'Imagem a direita',
+      },
+      {
+        name: 'centerImage',
+        icon: centerImageIcon,
+        title: 'Imagem no centro',
       },
     ];
   }

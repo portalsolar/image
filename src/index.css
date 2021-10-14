@@ -153,10 +153,29 @@
     }
   }
 
-  &--startImage {
+  &--leftImage {
     ^&__image {
       &-picture {
-        width: 100%;
+        width: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  &--rightImage {
+    ^&__image {
+      &-picture {
+        width: auto;
+        margin-left: auto;
+      }
+    }
+  }
+
+  &--centerImage {
+    ^&__image {
+      &-picture {
+        width: auto;
+        margin: 0 auto;
       }
     }
   }
