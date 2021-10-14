@@ -188,9 +188,6 @@
     }
   }
 
-  &__selected {
-    background: orange;
-  }
 }
 
 @keyframes image-preloader-spin {

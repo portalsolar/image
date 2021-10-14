@@ -99,7 +99,6 @@ export default class Tunes {
 
       el.addEventListener('click', () => {
         this.tuneClicked(tune.name, tune.action);
-        el.classList.add('image-tool__selected');
       });
 
       el.dataset.tune = tune.name;
