@@ -157,6 +157,7 @@
   }
 
   &--leftImage {
+    float: left;
     ^&__image {
       &-picture {
         width: auto;
@@ -165,6 +166,7 @@
   }
 
   &--rightImage {
+    float: right;
     ^&__image {
       &-picture {
         width: auto;
@@ -173,6 +175,7 @@
   }
 
   &--centerImage {
+    float: initial;
     ^&__image {
       &-picture {
         width: auto;
