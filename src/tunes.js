@@ -91,8 +91,11 @@ export default class Tunes {
     const tunes = Tunes.tunes.concat(this.actions);
 
     const isOPenTool = !!document.querySelector('ce-toolbar__actions--opened');
+    const container = document.querySelector('image-tool');
 
-    document.querySelector('image-tool').style.position = isOPenTool ? 'relative' : 'initial';
+    if (container) {
+      container.style.position = isOPenTool ? 'relative' : 'initial';
+    }
 
     tunes.forEach(tune => {
       const title = this.api.i18n.t(tune.title);
