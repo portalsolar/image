@@ -101,10 +101,17 @@ export default class Tunes {
 
       el.addEventListener('click', () => {
         this.tuneClicked(tune.name, tune.action);
+
         const unselect = ['rightImage', 'leftImage', 'centerImage'].filter(value => value !== tune.name);
 
         unselect.forEach(value => {
-          document.getElementById(value).classList.remove(this.CSS.buttonActive, `image-tool--${value}`);
+          const isSelect = document.getElementById(value).classList.contains(this.CSS.buttonActive);
+
+          if (isSelect) {
+            const activeTune = tunes.find(_tune => _tune.name === value);
+
+            this.tuneClicked(activeTune.name, activeTune.action);
+          }
         });
       });
 
