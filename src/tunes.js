@@ -114,12 +114,12 @@ export default class Tunes {
           }
         });
       });
-      // if (['rightImage', 'leftImage'].includes(tune.name)) {
-      //   const container = document.querySelector('.image-tool');
+      if (['rightImage', 'leftImage'].includes(tune.name)) {
+        const container = document.querySelector('.image-tool');
 
-      //   container.classList.toggle(tune.name === 'leftImage' ? 'paddingLeft' : 'paddingRight',
-      //     toolData[tune.name] && ['rightImage', 'leftImage'].includes(tune.name));
-      // }
+        container.classList.toggle(tune.name === 'leftImage' ? 'paddingLeft' : 'paddingRight',
+          toolData[tune.name] && ['rightImage', 'leftImage'].includes(tune.name));
+      }
 
       el.dataset.tune = tune.name;
       el.classList.toggle(this.CSS.buttonActive, toolData[tune.name]);
@@ -132,8 +132,6 @@ export default class Tunes {
 
       wrapper.appendChild(el);
     });
-
-    wrapper.appendChild(el);
 
     return wrapper;
   }
