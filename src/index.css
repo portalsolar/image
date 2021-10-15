@@ -160,7 +160,6 @@
     ^&__image {
       &-picture {
         width: auto;
-        float: left;
       }
     }
   }
@@ -169,7 +168,6 @@
     ^&__image {
       &-picture {
         width: auto;
-        float: right;
       }
     }
   }
@@ -202,10 +200,12 @@
   }
 }
 
-.paddingRight {
-  padding-right: 15px !important;
+.rightAlign {
+  padding-left: 15px !important;
+  float: right;
 }
 
-.paddingLeft {
-  padding-left: 15px !important;
+.leftAlign {
+  padding-right: 15px !important;
+  float: left;
 }

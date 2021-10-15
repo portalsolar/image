@@ -98,9 +98,15 @@ export default class Tunes {
       });
 
       el.setAttribute('id', tune.name);
+      const container = document.querySelector('.image-tool');
 
       el.addEventListener('click', () => {
         this.tuneClicked(tune.name, tune.action);
+
+        if (['rightImage', 'leftImage'].includes(tune.name)) {
+          container.classList.toggle(tune.name === 'leftImage' ? 'leftAlign' : 'rightAlign',
+            toolData[tune.name] && ['rightImage', 'leftImage'].includes(tune.name));
+        }
 
         const unselect = ['rightImage', 'leftImage', 'centerImage'].filter(value => value !== tune.name);
 
@@ -114,12 +120,6 @@ export default class Tunes {
           }
         });
       });
-      if (['rightImage', 'leftImage'].includes(tune.name)) {
-        const container = document.querySelector('.image-tool');
-
-        container.classList.toggle(tune.name === 'leftImage' ? 'paddingLeft' : 'paddingRight',
-          toolData[tune.name] && ['rightImage', 'leftImage'].includes(tune.name));
-      }
 
       el.dataset.tune = tune.name;
       el.classList.toggle(this.CSS.buttonActive, toolData[tune.name]);
