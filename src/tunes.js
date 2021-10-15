@@ -114,16 +114,15 @@ export default class Tunes {
           }
         });
       });
+      // if (['rightImage', 'leftImage'].includes(tune.name)) {
+      //   const container = document.querySelector('.image-tool');
+
+      //   container.classList.toggle(tune.name === 'leftImage' ? 'paddingLeft' : 'paddingRight',
+      //     toolData[tune.name] && ['rightImage', 'leftImage'].includes(tune.name));
+      // }
 
       el.dataset.tune = tune.name;
       el.classList.toggle(this.CSS.buttonActive, toolData[tune.name]);
-
-      if (['rightImage', 'leftImage'].includes(tune.name)) {
-        const container = document.querySelector('.image-tool');
-
-        container.classList.toggle(tune.name === 'leftImage' ? 'paddingLeft' : 'paddingRight',
-          toolData[tune.name] && ['rightImage', 'leftImage'].includes(tune.name));
-      }
 
       this.buttons.push(el);
 
