@@ -119,7 +119,7 @@ export default class Tunes {
       el.classList.toggle(this.CSS.buttonActive, toolData[tune.name]);
 
       if (['rightImage', 'leftImage'].includes(tune.name)) {
-        const container = document.getElementByClassName('image-tool')[0];
+        const container = document.querySelector('.image-tool');
 
         container.classList.toggle(tune.name === 'leftImage' ? 'paddingLeft' : 'paddingRight',
           toolData[tune.name] && ['rightImage', 'leftImage'].includes(tune.name));
