@@ -118,6 +118,13 @@ export default class Tunes {
       el.dataset.tune = tune.name;
       el.classList.toggle(this.CSS.buttonActive, toolData[tune.name]);
 
+      if (['rightImage', 'leftImage'].contains(tune.name)) {
+        const container = document.getElementByClassName('image-tool')[0];
+
+        container.classList.toggle(tune.name === 'leftImage' ? 'paddingLeft' : 'paddingRight',
+          toolData[tune.name] && ['rightImage', 'leftImage'].contains(tune.name));
+      }
+
       this.buttons.push(el);
 
       this.api.tooltip.onHover(el, title, {
@@ -128,12 +135,6 @@ export default class Tunes {
     });
 
     wrapper.appendChild(el);
-    wrapper.appendChild(make('div', ['cdx-input', 'image-tool__caption'], {
-      'data-placeholder': 'Caption',
-    }));
-    wrapper.appendChild(make('div', ['cdx-input', 'image-tool__caption'], {
-      'data-placeholder': 'Alt',
-    }));
 
     return wrapper;
   }

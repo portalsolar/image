@@ -2,6 +2,9 @@
   --bg-color: #cdd1e0;
   --front-color: #388ae5;
   --border-color: #e8e8eb;
+  position: relative;
+  z-index: 100;
+  padding: 15px 0px 15px 0px;
 
   &__image {
     border-radius: 3px;
@@ -197,4 +200,12 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.paddingRight {
+  padding-right: 15px !important;
+}
+
+.paddingLeft {
+  padding-left: 15px !important;
 }
