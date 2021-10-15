@@ -127,6 +127,14 @@ export default class Tunes {
       wrapper.appendChild(el);
     });
 
+    wrapper.appendChild(el);
+    wrapper.appendChild(make('div', ['cdx-input', 'image-tool__caption'], {
+      'data-placeholder': 'Caption',
+    }));
+    wrapper.appendChild(make('div', ['cdx-input', 'image-tool__caption'], {
+      'data-placeholder': 'Alt',
+    }));
+
     return wrapper;
   }
 

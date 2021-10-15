@@ -157,7 +157,7 @@
     ^&__image {
       &-picture {
         width: auto;
-        margin-right: auto;
+        float: left;
       }
     }
   }
@@ -166,7 +166,7 @@
     ^&__image {
       &-picture {
         width: auto;
-        margin-left: auto;
+        float: right;
       }
     }
   }
