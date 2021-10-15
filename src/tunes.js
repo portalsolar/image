@@ -103,15 +103,26 @@ export default class Tunes {
       el.addEventListener('click', () => {
         this.tuneClicked(tune.name, tune.action);
 
-        if (['rightImage', 'leftImage'].includes(tune.name)) {
-          container.classList.toggle(tune.name === 'leftImage' ? 'leftAlign' : 'rightAlign',
-            toolData[tune.name] && ['rightImage', 'leftImage'].includes(tune.name));
+        if (toolData[tune.name] === 'leftImage') {
+          container.classList.toggle('leftAlign', toolData[tune.name]);
+        }
+
+        if (toolData[tune.name] === 'rightImage') {
+          container.classList.toggle('rightAlign', toolData[tune.name]);
         }
 
         const unselect = ['rightImage', 'leftImage', 'centerImage'].filter(value => value !== tune.name);
 
         unselect.forEach(value => {
           const isSelect = document.getElementById(value).classList.contains(this.CSS.buttonActive);
+
+          if (value === 'leftImage') {
+            container.classList.toggle('leftAlign', false);
+          }
+
+          if (value === 'rightImage') {
+            container.classList.toggle('rightAlign', false);
+          }
 
           if (isSelect) {
             const activeTune = tunes.find(_tune => _tune.name === value);
