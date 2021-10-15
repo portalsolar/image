@@ -105,7 +105,7 @@ export default class Tunes {
         const unselect = ['rightImage', 'leftImage', 'centerImage'].filter(value => value !== tune.name);
 
         unselect.forEach(value => {
-          const isSelect = document.getElementById(value).classList.contains(this.CSS.buttonActive);
+          const isSelect = document.getElementById(value).classList.includes(this.CSS.buttonActive);
 
           if (isSelect) {
             const activeTune = tunes.find(_tune => _tune.name === value);
@@ -118,11 +118,11 @@ export default class Tunes {
       el.dataset.tune = tune.name;
       el.classList.toggle(this.CSS.buttonActive, toolData[tune.name]);
 
-      if (['rightImage', 'leftImage'].contains(tune.name)) {
+      if (['rightImage', 'leftImage'].includes(tune.name)) {
         const container = document.getElementByClassName('image-tool')[0];
 
         container.classList.toggle(tune.name === 'leftImage' ? 'paddingLeft' : 'paddingRight',
-          toolData[tune.name] && ['rightImage', 'leftImage'].contains(tune.name));
+          toolData[tune.name] && ['rightImage', 'leftImage'].includes(tune.name));
       }
 
       this.buttons.push(el);
