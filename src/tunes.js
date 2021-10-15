@@ -90,6 +90,10 @@ export default class Tunes {
 
     const tunes = Tunes.tunes.concat(this.actions);
 
+    const isOPenTool = !!document.querySelector('ce-toolbar__actions--opened');
+
+    document.querySelector('image-tool').style.position = isOPenTool ? 'relative' : 'initial';
+
     tunes.forEach(tune => {
       const title = this.api.i18n.t(tune.title);
       const el = make('div', [this.CSS.buttonBase, this.CSS.button], {
