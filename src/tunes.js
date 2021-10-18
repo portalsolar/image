@@ -70,7 +70,7 @@ export default class Tunes {
    */
   get CSS() {
     return {
-      wrapper: '',
+      wrapper: 'image-tool-toolboox',
       buttonBase: this.api.styles.settingsButton,
       button: 'image-tool__tune',
       buttonActive: this.api.styles.settingsButtonActive,
@@ -91,14 +91,6 @@ export default class Tunes {
     if (container) {
       container.style.position = 'initial';
     }
-
-    this.api.listeners.on(container, 'mouseout', () => {
-      console.info('out moved');
-      if (container.style.position === 'relative') {
-        return;
-      }
-      container.style.position = 'relative';
-    }, false);
 
     this.buttons = [];
 
