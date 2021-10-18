@@ -92,7 +92,7 @@ export default class Tunes {
       container.style.position = 'initial';
     }
 
-    this.hanldeButtonAction();
+    this.hanldeButtonAction(container);
 
     this.buttons = [];
 
@@ -159,9 +159,9 @@ export default class Tunes {
   }
 
   /**
-   *
+   * @param container
    */
-  hanldeButtonAction() {
+  hanldeButtonAction(container) {
     const btn = document.querySelector('.ce-settings');
     const options = {
       attributes: true,
@@ -174,6 +174,7 @@ export default class Tunes {
     function callback(mutationList, observer) {
       mutationList.forEach(function (mutation) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          container.style.position = 'relative';
           console.info('change');
           console.info(observer);
           observer.disconnect();
