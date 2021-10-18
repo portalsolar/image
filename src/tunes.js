@@ -21,7 +21,6 @@ export default class Tunes {
     this.actions = actions;
     this.onChange = onChange;
     this.buttons = [];
-    this.observerToolbar = undefined;
   }
 
   /**
@@ -176,13 +175,14 @@ export default class Tunes {
       mutationList.forEach(function (mutation) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           console.info('change');
-          this.observerToolbar && this.observerToolbar.disconnect();
+          console.info(observer);
+          observer.disconnect();
         }
       });
     }
 
-    this.observerToolbar = new MutationObserver(callback);
+    const observerToolbar = new MutationObserver(callback);
 
-    this.observerToolbar.observe(btn, options);
+    observerToolbar.observe(btn, options);
   }
 }
