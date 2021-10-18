@@ -446,32 +446,4 @@ export default class ImageTool {
     this.ui.showPreloader(url);
     this.uploader.uploadByUrl(url);
   }
-
-  /**
-   *
-   */
-  openToolbar() {
-    console.info('open the toolbar');
-    this.api.toolbar.open();
-    const container = document.querySelector('.image-tool');
-
-    if (container) {
-      container.style.position = 'initial';
-    }
-  }
-
-  /**
-   * Change display of toolbar
-   *
-   */
-  closeToolbar() {
-    console.info('close the toolbar');
-    this.api.toolbar.close();
-    const container = document.querySelector('.image-tool');
-
-    if (container) {
-      container.style.position = 'relative';
-    }
-    // then do something else
-  }
 }

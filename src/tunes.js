@@ -86,6 +86,24 @@ export default class Tunes {
   render(toolData) {
     const wrapper = make('div', this.CSS.wrapper);
 
+    this.api.listeners.on(wrapper, 'click', () => {
+      console.log('Button clicked!');
+      const container = document.querySelector('.image-tool');
+
+      if (container) {
+        container.style.position = 'initial';
+      }
+    }, false);
+
+    this.api.listeners.on(wrapper, 'mouseout', () => {
+      console.log('Button clicked OUt!');
+      const container = document.querySelector('.image-tool');
+
+      if (container) {
+        container.style.position = 'relative';
+      }
+    }, false);
+
     this.buttons = [];
 
     const tunes = Tunes.tunes.concat(this.actions);
