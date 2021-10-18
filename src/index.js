@@ -451,6 +451,7 @@ export default class ImageTool {
    *
    */
   openToolbar() {
+    console.info('open the toolbar');
     this.api.toolbar.open();
     const container = document.querySelector('.image-tool');
 
@@ -464,6 +465,7 @@ export default class ImageTool {
    *
    */
   closeToolbar() {
+    console.info('close the toolbar');
     this.api.toolbar.close();
     const container = document.querySelector('.image-tool');
 
