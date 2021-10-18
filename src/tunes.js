@@ -84,24 +84,20 @@ export default class Tunes {
    * @returns {Element}
    */
   render(toolData) {
+    console.info('created');
     const wrapper = make('div', this.CSS.wrapper);
+    const container = document.querySelector('.image-tool');
 
-    this.api.listeners.on(wrapper, 'click', () => {
-      console.log('Button clicked!');
-      const container = document.querySelector('.image-tool');
+    if (container) {
+      container.style.position = 'initial';
+    }
 
-      if (container) {
-        container.style.position = 'initial';
+    this.api.listeners.on(container, 'mouseout', () => {
+      console.info('out moved');
+      if (container.style.position === 'relative') {
+        return;
       }
-    }, false);
-
-    this.api.listeners.on(wrapper, 'mouseout', () => {
-      console.log('Button clicked OUt!');
-      const container = document.querySelector('.image-tool');
-
-      if (container) {
-        container.style.position = 'relative';
-      }
+      container.style.position = 'relative';
     }, false);
 
     this.buttons = [];
