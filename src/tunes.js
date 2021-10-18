@@ -175,8 +175,6 @@ export default class Tunes {
       mutationList.forEach(function (mutation) {
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           container.style.position = 'relative';
-          console.info('change');
-          console.info(observer);
           observer.disconnect();
         }
       });
