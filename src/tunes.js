@@ -102,12 +102,20 @@ export default class Tunes {
       el.addEventListener('click', () => {
         this.tuneClicked(tune.name, tune.action);
 
-        const isOPenTool = !!document.querySelector('.ce-toolbar__actions--opened');
-        const container = document.querySelector('.image-tool');
+        // const isOPenTool = !!document.querySelector('.ce-toolbar__actions--opened');
+        // const container = document.querySelector('.image-tool');
 
-        if (container) {
-          container.style.position = isOPenTool ? 'relative' : 'initial';
-        }
+        // if (container) {
+        //   container.style.position = isOPenTool ? 'relative' : 'initial';
+        // }
+
+        // if (isOPenTool) {
+        //   const opened = document.querySelector('.ce-settings');
+
+        //   opened.style.top = 'none !important';
+        //   opened.style.bottom = '30px !important';
+        //   opened.style.width = '280px !important';
+        // }
 
         const unselect = ['rightImage', 'leftImage', 'centerImage'].filter(value => value !== tune.name);
 
