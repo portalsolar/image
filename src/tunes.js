@@ -21,6 +21,7 @@ export default class Tunes {
     this.actions = actions;
     this.onChange = onChange;
     this.buttons = [];
+    this.observerToolbar = undefined;
   }
 
   /**
@@ -92,6 +93,8 @@ export default class Tunes {
       container.style.position = 'initial';
     }
 
+    this.hanldeButtonAction();
+
     this.buttons = [];
 
     const tunes = Tunes.tunes.concat(this.actions);
@@ -107,21 +110,6 @@ export default class Tunes {
 
       el.addEventListener('click', () => {
         this.tuneClicked(tune.name, tune.action);
-
-        // const isOPenTool = !!document.querySelector('.ce-toolbar__actions--opened');
-        // const container = document.querySelector('.image-tool');
-
-        // if (container) {
-        //   container.style.position = isOPenTool ? 'relative' : 'initial';
-        // }
-
-        // if (isOPenTool) {
-        //   const opened = document.querySelector('.ce-settings');
-
-        //   opened.style.top = 'none !important';
-        //   opened.style.bottom = '30px !important';
-        //   opened.style.width = '280px !important';
-        // }
 
         const unselect = ['rightImage', 'leftImage', 'centerImage'].filter(value => value !== tune.name);
 
@@ -169,5 +157,32 @@ export default class Tunes {
     button.classList.toggle(this.CSS.buttonActive, !button.classList.contains(this.CSS.buttonActive));
 
     this.onChange(tuneName);
+  }
+
+  /**
+   *
+   */
+  hanldeButtonAction() {
+    const btn = document.querySelector('.ce-settings');
+    const options = {
+      attributes: true,
+    };
+
+    /**
+     * @param mutationList
+     * @param observer
+     */
+    function callback(mutationList, observer) {
+      mutationList.forEach(function (mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          console.info('change');
+          this.observerToolbar && this.observerToolbar.disconnect();
+        }
+      });
+    }
+
+    this.observerToolbar = new MutationObserver(callback);
+
+    this.observerToolbar.observe(btn, options);
   }
 }
